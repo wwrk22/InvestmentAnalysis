@@ -14,6 +14,8 @@ endif()
 
 add_executable(${PROJECT_NAME}
 	./src/main.cpp
+	./src/company/company.cpp
+	./src/company/consumer_defensive.cpp
 	./src/metric/revenue.cpp)
 
 set(${PROJECT_NAME} PROPERTIES CXX_STANDARD 17)

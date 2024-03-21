@@ -1,8 +1,8 @@
-#include "metric/revenue.h"
+#include "company/consumer_defensive.h"
 
 int main() {
-	Revenue r;
-	r.record();
+	ConsumerDefensive cd("Apple, Inc.", "AAPL");
+	cd.recordMetrics();
 
 	return 0;
 }
