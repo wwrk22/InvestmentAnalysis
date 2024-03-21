@@ -14,7 +14,7 @@ endif()
 
 add_executable(${PROJECT_NAME}
 	./src/main.cpp
-	./src/util.cpp)
+	./src/metric/revenue.cpp)
 
 set(${PROJECT_NAME} PROPERTIES CXX_STANDARD 17)
 
@@ -24,17 +24,6 @@ target_compile_options(${PROJECT_NAME} PRIVATE
 	-Wextra
 	-Wpedantic)
 
-target_include_directories(${PROJECT_NAME} PRIVATE ./include)
-
-# == cpr lib ==
-# Include the FetchContent module.
-include(FetchContent)
-
-# Locate the dependency to be downloaded.
-FetchContent_Declare(cpr GIT_REPOSITORY https://github.com/libcpr/cpr.git
-	GIT_TAG 3b15fa82ea74739b574d705fea44959b58142eb8)
-
-# Download the dependency.
-FetchContent_MakeAvailable(cpr)
-
-target_link_libraries(${PROJECT_NAME} PRIVATE cpr::cpr)
+target_include_directories(${PROJECT_NAME} PRIVATE
+	./include
+	./src)
